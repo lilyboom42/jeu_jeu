@@ -1,0 +1,29 @@
+.container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .card {
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .card img {
+    display: none;
+  }
+  
+  .card.active img {
+    display: block;
+  }
+  
