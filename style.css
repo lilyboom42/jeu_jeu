@@ -11,19 +11,20 @@
 .container {
     text-align: center;
 }
- Small devices (tablets, 768px and up)
- @media (max-width:410px) {
+@media (max-width: 768px) {
   .container {
     padding: 0 1rem;
     width: 100%;
     margin: 0 auto;
     display: grid;
-    width: 10%;  
   }
-  #button class {
+
+  #button {
     width: 100%;
     margin: 0 auto;
   }
+}
+
  /* Medium devices (desktops, 992px and up) */
  @media (min-width: 992px) { }
  /* Large devices (large desktops, 1200px and up) */
