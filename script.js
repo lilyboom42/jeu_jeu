@@ -34,10 +34,10 @@ function showTable() {
             const valeur = tabJeu[i][j];
             if (valeur === 0) {
                 // Afficher un bouton avec une image par défaut
-                txt += "<button class='btn btn-primary m-2' style='width:100px;height:100px' onClick ='verif(\"" + i + "-" + j + "\")'><img src='assets/default.png' style='width:100%;height:100%; object-fit: cover;'></button>";
+                txt += "<button class='btn btn-primary m-2' style='width:50px;height:50px' onClick ='verif(\"" + i + "-" + j + "\")'><img src='assets/default.png' style='width:50%;height:50%; object-fit: cover;'></button>";
             } else {
                 // Afficher l'image correspondant à la carte
-                txt += "<img src='" + getImage(valeur) + "' style='width:100px;height:100px' class='m-2'>";
+                txt += "<img src='" + getImage(valeur) + "' style='width:50px;height:50px' class='m-2'>";
             }
         }
         txt += "</div>";
