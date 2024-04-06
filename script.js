@@ -29,21 +29,21 @@ startTimer(); // Démarrage du chronomètre au début du jeu
 function showTable() {
     let txt = "";
     for (let i = 0; i < tabJeu.length; i++) {
-        txt += "<div>";
         for (let j = 0; j < tabJeu[i].length; j++) {
             const valeur = tabJeu[i][j];
-            if (valeur === 0) {
-                // Afficher un bouton avec une image par défaut
-                txt += "<button class='btn btn-primary m-2' style='width:50px;height:50px' onClick ='verif(\"" + i + "-" + j + "\")'><img src='assets/default.png' style='width:50%;height:50%; object-fit: cover;'></button>";
-            } else {
+            const isFaceUp = valeur !== 0; // Vérifie si la carte est retournée
+            const cardClass = isFaceUp ? 'card-face-up' : 'card-face-down'; // Détermine la classe à appliquer
+            txt += "<div class='card " + cardClass + "' style='grid-column: " + (j + 2) + "; grid-row: " + (i + 2) + ";' onClick='verif(\"" + i + "-" + j + "\")'>";
+            if (isFaceUp) {
                 // Afficher l'image correspondant à la carte
-                txt += "<img src='" + getImage(valeur) + "' style='width:50px;height:50px' class='m-2'>";
+                txt += "<img src='" + getImage(valeur) + "' class='img'>";
             }
+            txt += "</div>";
         }
-        txt += "</div>";
     }
     divResultat.innerHTML = txt;
 }
+
 
 // Fonction pour récupérer le chemin de l'image en fonction de la valeur de la carte
 function getImage(value) {

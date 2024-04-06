@@ -1,31 +1,93 @@
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: blueviolet;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: blueviolet;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 150px 0 0 0;
+}
+img{
+  width: 100px;
+  height: 100px;
+}
+/* Style pour une carte retournée */
+.card-face-up {
+  background-color: #f0f0f0; /* Couleur de fond lorsque la carte est retournée */
+}
+
+/* Style pour une carte face cachée */
+.card-face-down {
+    background-image: url(assets/default.png); /* Image de fond pour les cartes retournées */
+    background-size: cover; /* Redimensionne l'image pour couvrir toute la carte */
+  }
+  
+.card {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  overflow: hidden;
+  background-image: url(assets/default.png);
+}
+
+button {
+  width: 100px;
+  height: 50px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 20px;
 }
 
 .container {
-    text-align: center;
+  margin-top: 20px;
 }
-@media (max-width: 768px) {
+
+#resultat {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  margin-top: 20px;
+  font-size: 18px;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Règles de media queries */
+@media (max-width: 480px) {
+  .card {
+    width: 50px;
+    height: 50px;
+  }
+  
+  button {
+    width: 100px;
+    height: 25px;
+    margin: 2px;
+    border-radius: 5px;
+  }
+  
   .container {
-    padding: 0 1rem;
-    width: 100%;
-    margin: 0 auto;
-    display: grid;
+    margin-top: 10px;
   }
 
-  #button {
-    width: 100%;
-    margin: 0 auto;
+  img{
+    width: 50px;
+    height: 50px;
+  }
+  #resultat {
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    margin-top: 5px;
+    font-size: 14px; /* Taille de police réduite pour les petits écrans */
   }
 }
-
- /* Medium devices (desktops, 992px and up) */
- @media (min-width: 992px) { }
- /* Large devices (large desktops, 1200px and up) */
- @media (max-width: 1200px) { }
