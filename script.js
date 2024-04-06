@@ -15,15 +15,15 @@ let tabResultat = generateArrayRandom();
 let oldSelection = [];
 let nbAffiche = 0;
 let ready = true;
-let count = 0; // Initialisation du compteur de tours
+let count = 0; 
 let seconds = 0;
 let minutes = 0;
 let timerInterval;
 
 // Afficher le tableau initial
 showTable();
-updateTourCount(); // Appel initial de la fonction pour afficher le nombre initial de tours
-startTimer(); // Démarrage du chronomètre au début du jeu
+updateTourCount(); 
+startTimer(); 
 
 // Fonction pour mettre en forme le tableau de jeu
 function showTable() {
@@ -31,11 +31,10 @@ function showTable() {
     for (let i = 0; i < tabJeu.length; i++) {
         for (let j = 0; j < tabJeu[i].length; j++) {
             const valeur = tabJeu[i][j];
-            const isFaceUp = valeur !== 0; // Vérifie si la carte est retournée
-            const cardClass = isFaceUp ? 'card-face-up' : 'card-face-down'; // Détermine la classe à appliquer
+            const isFaceUp = valeur !== 0; 
+            const cardClass = isFaceUp ? 'card-face-up' : 'card-face-down'; 
             txt += "<div class='card " + cardClass + "' style='grid-column: " + (j + 2) + "; grid-row: " + (i + 2) + ";' onClick='verif(\"" + i + "-" + j + "\")'>";
             if (isFaceUp) {
-                // Afficher l'image correspondant à la carte
                 txt += "<img src='" + getImage(valeur) + "' class='img'>";
             }
             txt += "</div>";
@@ -91,7 +90,7 @@ function allCardsFound() {
     for (let i = 0; i < tabJeu.length; i++) {
         for (let j = 0; j < tabJeu[i].length; j++) {
             if (tabJeu[i][j] === 0) {
-                return false; // Il reste des cartes non trouvées
+                return false;
             }
         }
     }
@@ -118,8 +117,8 @@ function verif(bouton) {
                 ready = true;
                 nbAffiche = 0;
                 oldSelection = [line, column];
-                count++; // Incrémentation du compteur à chaque tour
-                updateTourCount(); // Mettre à jour le compteur de tours
+                count++; 
+                updateTourCount(); 
 
                 // Vérifier si toutes les cartes ont été trouvées
                 if (allCardsFound()) {
@@ -187,6 +186,7 @@ function resetGame() {
     startTimer();
 }
 
+
 // Fonction pour sauvegarder la partie
 function saveGame() {
     const gameState = {
@@ -219,11 +219,12 @@ function loadGame() {
         showTable();
         updateTourCount();
         alert('La partie a été chargée avec succès.');
-        startTimer(); // Démarrer le chronomètre chargé
+        startTimer();
     } else {
         alert('Aucune partie sauvegardée.');
     }
 }
+
 
 // Fonction pour démarrer le chronomètre
 function startTimer() {
@@ -250,7 +251,12 @@ function updateTimer() {
 
 // Fonction appelée lorsque toutes les paires de cartes ont été trouvées
 function congratulations() {
-    stopTimer(); // Arrêter le chronomètre lorsque la partie est terminée
-    resetGame(); // Réinitialiser le jeu lorsque la partie est terminée
+    stopTimer(); 
+    resetGame();
     alert("Félicitations ! Vous avez trouvé toutes les paires !");
+}
+
+// Fonction pour commencer une nouvelle partie
+function startNewGame() {
+    resetGame(); 
 }

@@ -1,8 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: blueviolet;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+.color-change-2x{-webkit-animation:color-change-2x 2s linear infinite alternate both;animation:color-change-2x 2s linear infinite alternate both}  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .game {
@@ -10,12 +9,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 150px 0 0 0;
 }
-img{
+
+img {
   width: 100px;
   height: 100px;
 }
+
 /* Style pour une carte retournée */
 .card-face-up {
   background-color: #f0f0f0; 
