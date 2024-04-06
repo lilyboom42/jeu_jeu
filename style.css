@@ -18,13 +18,13 @@ img{
 }
 /* Style pour une carte retournée */
 .card-face-up {
-  background-color: #f0f0f0; /* Couleur de fond lorsque la carte est retournée */
+  background-color: #f0f0f0; 
 }
 
 /* Style pour une carte face cachée */
 .card-face-down {
-    background-image: url(assets/default.png); /* Image de fond pour les cartes retournées */
-    background-size: cover; /* Redimensionne l'image pour couvrir toute la carte */
+    background-image: url(assets/default.png); 
+    background-size: cover; 
   }
   
 .card {
@@ -88,6 +88,6 @@ button {
     grid-column-gap: 5px;
     grid-row-gap: 5px;
     margin-top: 5px;
-    font-size: 14px; /* Taille de police réduite pour les petits écrans */
+    font-size: 14px; 
   }
 }
