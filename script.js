@@ -227,6 +227,7 @@ function loadGame() {
 
 // Fonction pour démarrer le chronomètre
 function startTimer() {
+    clearInterval(timerInterval);
     timerInterval = setInterval(updateTimer, 1000);
 }
 
