@@ -34,10 +34,10 @@ function showTable() {
             const valeur = tabJeu[i][j];
             if (valeur === 0) {
                 // Afficher un bouton avec une image par défaut
-                txt += "<button class='btn btn-primary m-2' style='width:50px;height:50px' onClick ='verif(\"" + i + "-" + j + "\")'><img src='assets/default.png' style='width:50%;height:50%; object-fit: cover;'></button>";
+                txt += "<button class='btn btn-primary m-2'  onClick ='verif(\"" + i + "-" + j + "\")'><img src='assets/default.png' ; object-fit: cover;'></button>";
             } else {
                 // Afficher l'image correspondant à la carte
-                txt += "<img src='" + getImage(valeur) + "' style='width:50px;height:50px' class='m-2'>";
+                txt += "<img src='" + getImage(valeur) + " class='m-2'>";
             }
         }
         txt += "</div>";
@@ -219,16 +219,19 @@ function loadGame() {
         showTable();
         updateTourCount();
         alert('La partie a été chargée avec succès.');
-        startTimer(); // Démarrer le chronomètre chargé
+        startTimer(); // Démarrer le chronomètre correctement
     } else {
         alert('Aucune partie sauvegardée.');
     }
 }
 
+
 // Fonction pour démarrer le chronomètre
 function startTimer() {
+    clearInterval(timerInterval); 
     timerInterval = setInterval(updateTimer, 1000);
 }
+
 
 // Fonction pour arrêter le chronomètre
 function stopTimer() {
